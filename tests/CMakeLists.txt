@@ -16,14 +16,14 @@ set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Create test executable
-add_executable(iniconfig_tests
+add_executable(iniparsercxx_tests
     test_iniconfig.cpp
 )
 
 # Link against the library and Google Test
-target_link_libraries(iniconfig_tests
+target_link_libraries(iniparsercxx_tests
     PRIVATE
-        iniconfig::iniconfig
+        iniparsercxx::iniparsercxx
         GTest::gtest_main
 )
 
@@ -35,4 +35,4 @@ configure_file(test_malformed.ini test_malformed.ini COPYONLY)
 
 # Discover tests
 include(GoogleTest)
-gtest_discover_tests(iniconfig_tests)
+gtest_discover_tests(iniparsercxx_tests)

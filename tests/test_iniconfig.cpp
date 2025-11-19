@@ -1,4 +1,4 @@
-#include <iniConfig.hpp>
+#include <iniparsercxx.hpp>
 #include <gtest/gtest.h>
 #include <fstream>
 
