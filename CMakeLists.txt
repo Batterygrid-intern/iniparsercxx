@@ -10,8 +10,14 @@ include(GNUInstallDirs)
 # Option to build shared or static library
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
-# Option to build tests
-option(BUILD_TESTING "Build tests" ON)
+# Option to build tests (disable by default when used via FetchContent)
+if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+    # Standalone build
+    option(BUILD_TESTING "Build tests" ON)
+else()
+    # Used as subdirectory (e.g., via FetchContent)
+    option(BUILD_TESTING "Build tests" OFF)
+endif()
 
 add_subdirectory(src)
 
