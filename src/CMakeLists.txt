@@ -38,7 +38,7 @@ install(EXPORT iniconfigTargets
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    ${CMAKE_SOURCE_DIR}/cmake/iniconfigConfig.cmake.in
+    ${PROJECT_SOURCE_DIR}/cmake/iniconfigConfig.cmake.in
     ${CMAKE_CURRENT_BINARY_DIR}/iniconfigConfig.cmake
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/iniconfig
 )
